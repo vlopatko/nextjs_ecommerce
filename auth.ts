@@ -1,8 +1,12 @@
-import type { GetServerSidePropsContext, NextApiRequest, NextApiResponse } from "next"
-import type { NextAuthOptions as NextAuthConfig } from "next-auth"
-import { getServerSession } from "next-auth"
+import type {
+  GetServerSidePropsContext,
+  NextApiRequest,
+  NextApiResponse,
+} from 'next'
+import type { NextAuthOptions as NextAuthConfig } from 'next-auth'
+import { getServerSession } from 'next-auth'
 
-import Apple from "next-auth/providers/apple"
+import Apple from 'next-auth/providers/apple'
 // import Atlassian from "next-auth/providers/atlassian"
 // import Auth0 from "next-auth/providers/auth0"
 // import Authentik from "next-auth/providers/authentik"
@@ -18,7 +22,7 @@ import Apple from "next-auth/providers/apple"
 // import Dropbox from "next-auth/providers/dropbox"
 // import DuendeIDS6 from "next-auth/providers/duende-identity-server6"
 // import Eveonline from "next-auth/providers/eveonline"
-import Facebook from "next-auth/providers/facebook"
+import Facebook from 'next-auth/providers/facebook'
 // import Faceit from "next-auth/providers/faceit"
 // import FortyTwoSchool from "next-auth/providers/42-school"
 // import Foursquare from "next-auth/providers/foursquare"
@@ -26,9 +30,9 @@ import Facebook from "next-auth/providers/facebook"
 // import Fusionauth from "next-auth/providers/fusionauth"
 // import GitHub from "next-auth/providers/github"
 // import Gitlab from "next-auth/providers/gitlab"
-import Google from "next-auth/providers/google"
+import Google from 'next-auth/providers/google'
 // import Hubspot from "next-auth/providers/hubspot"
-import Instagram from "next-auth/providers/instagram"
+import Instagram from 'next-auth/providers/instagram'
 // import Kakao from "next-auth/providers/kakao"
 // import Keycloak from "next-auth/providers/keycloak"
 // import Line from "next-auth/providers/line"
@@ -54,7 +58,7 @@ import Instagram from "next-auth/providers/instagram"
 // import Todoist from "next-auth/providers/todoist"
 // import Trakt from "next-auth/providers/trakt"
 // import Twitch from "next-auth/providers/twitch"
-import Twitter from "next-auth/providers/twitter"
+import Twitter from 'next-auth/providers/twitter'
 // import UnitedEffects from "next-auth/providers/united-effects"
 // import Vk from "next-auth/providers/vk"
 // import Wikimedia from "next-auth/providers/wikimedia"
@@ -66,16 +70,19 @@ import Twitter from "next-auth/providers/twitter"
 // import Zoom from "next-auth/providers/zoom"
 
 // Read more at: https://next-auth.js.org/getting-started/typescript#module-augmentation
-declare module "next-auth/jwt" {
+declare module 'next-auth/jwt' {
   interface JWT {
     /** The user's role. */
-    userRole?: "admin"
+    userRole?: 'admin'
   }
 }
 
 export const config = {
   providers: [
-    Apple({ clientId: process.env.AUTH_APPLE_ID, clientSecret: process.env.AUTH_APPLE_SECRET }),
+    Apple({
+      clientId: process.env.AUTH_APPLE_ID,
+      clientSecret: process.env.AUTH_APPLE_SECRET,
+    }),
     // Atlassian({ clientId: process.env.AUTH_ATLASSIAN_ID, clientSecret: process.env.AUTH_ATLASSIAN_SECRET }),
     // Auth0({ clientId: process.env.AUTH_AUTH0_ID, clientSecret: process.env.AUTH_AUTH0_SECRET, issuer: process.env.AUTH_AUTH0_ISSUER }),
     // Authentik({ clientId: process.env.AUTH_AUTHENTIK_ID, clientSecret: process.env.AUTH_AUTHENTIK_SECRET }),
@@ -91,7 +98,10 @@ export const config = {
     // Dropbox({ clientId: process.env.AUTH_DROPBOX_ID, clientSecret: process.env.AUTH_DROPBOX_SECRET }),
     // DuendeIDS6({ clientId: process.env.AUTH_DUENDEIDS6_ID, clientSecret: process.env.AUTH_DUENDEIDS6_SECRET }),
     // Eveonline({ clientId: process.env.AUTH_EVEONLINE_ID, clientSecret: process.env.AUTH_EVEONLINE_SECRET }),
-    Facebook({ clientId: process.env.AUTH_FACEBOOK_ID, clientSecret: process.env.AUTH_FACEBOOK_SECRET }),
+    Facebook({
+      clientId: process.env.AUTH_FACEBOOK_ID,
+      clientSecret: process.env.AUTH_FACEBOOK_SECRET,
+    }),
     // Faceit({ clientId: process.env.AUTH_FACEIT_ID, clientSecret: process.env.AUTH_FACEIT_SECRET }),
     // FortyTwoSchool({ clientId: process.env.AUTH_FORTYTWOSCHOOL_ID, clientSecret: process.env.AUTH_FORTYTWOSCHOOL_SECRET }),
     // Foursquare({ clientId: process.env.AUTH_FOURSQUARE_ID, clientSecret: process.env.AUTH_FOURSQUARE_SECRET }),
@@ -99,9 +109,15 @@ export const config = {
     // Fusionauth({ clientId: process.env.AUTH_FUSIONAUTH_ID, clientSecret: process.env.AUTH_FUSIONAUTH_SECRET }),
     // GitHub({ clientId: process.env.AUTH_GITHUB_ID, clientSecret: process.env.AUTH_GITHUB_SECRET }),
     // Gitlab({ clientId: process.env.AUTH_GITLAB_ID, clientSecret: process.env.AUTH_GITLAB_SECRET }),
-    Google({ clientId: process.env.AUTH_GOOGLE_ID, clientSecret: process.env.AUTH_GOOGLE_SECRET }),
+    Google({
+      clientId: process.env.AUTH_GOOGLE_ID,
+      clientSecret: process.env.AUTH_GOOGLE_SECRET,
+    }),
     // Hubspot({ clientId: process.env.AUTH_HUBSPOT_ID, clientSecret: process.env.AUTH_HUBSPOT_SECRET }),
-    Instagram({ clientId: process.env.AUTH_INSTAGRAM_ID, clientSecret: process.env.AUTH_INSTAGRAM_SECRET }),
+    Instagram({
+      clientId: process.env.AUTH_INSTAGRAM_ID,
+      clientSecret: process.env.AUTH_INSTAGRAM_SECRET,
+    }),
     // Kakao({ clientId: process.env.AUTH_KAKAO_ID, clientSecret: process.env.AUTH_KAKAO_SECRET }),
     // Keycloak({ clientId: process.env.AUTH_KEYCLOAK_ID, clientSecret: process.env.AUTH_KEYCLOAK_SECRET }),
     // Line({ clientId: process.env.AUTH_LINE_ID, clientSecret: process.env.AUTH_LINE_SECRET }),
@@ -127,7 +143,11 @@ export const config = {
     // Todoist({ clientId: process.env.AUTH_TODOIST_ID, clientSecret: process.env.AUTH_TODOIST_SECRET }),
     // Trakt({ clientId: process.env.AUTH_TRAKT_ID, clientSecret: process.env.AUTH_TRAKT_SECRET }),
     // Twitch({ clientId: process.env.AUTH_TWITCH_ID, clientSecret: process.env.AUTH_TWITCH_SECRET }),
-    Twitter({ clientId: process.env.AUTH_TWITTER_ID, clientSecret: process.env.AUTH_TWITTER_SECRET, version: "2.0" }),
+    Twitter({
+      clientId: process.env.AUTH_TWITTER_ID,
+      clientSecret: process.env.AUTH_TWITTER_SECRET,
+      version: '2.0',
+    }),
     // UnitedEffects({ clientId: process.env.AUTH_UE_ID, clientSecret: process.env.AUTH_UE_SECRET, issuer: process.env.AUTH_UE_ISSUER }),
     // Vk({ clientId: process.env.AUTH_VK_ID, clientSecret: process.env.AUTH_VK_SECRET }),
     // Wikimedia({ clientId: process.env.AUTH_WIKIMEDIA_ID, clientSecret: process.env.AUTH_WIKIMEDIA_SECRET }),
@@ -140,7 +160,7 @@ export const config = {
   ],
   callbacks: {
     async jwt({ token }) {
-      token.userRole = "admin"
+      token.userRole = 'admin'
       return token
     },
   },
@@ -148,7 +168,12 @@ export const config = {
 
 // Helper function to get session without passing config every time
 // https://next-auth.js.org/configuration/nextjs#getserversession
-export function auth(...args: [GetServerSidePropsContext["req"], GetServerSidePropsContext["res"]] | [NextApiRequest, NextApiResponse] | []) {
+export function auth(
+  ...args:
+    | [GetServerSidePropsContext['req'], GetServerSidePropsContext['res']]
+    | [NextApiRequest, NextApiResponse]
+    | []
+) {
   return getServerSession(...args, config)
 }
 

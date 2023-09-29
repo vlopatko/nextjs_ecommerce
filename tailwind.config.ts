@@ -9,8 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'header': '#2A2941',
-        'footer': '#EBEEF2',
+        header: '#2A2941',
+        footer: '#EBEEF2',
         'nav-border': '#EBEAEA',
         'light-white': '#FAFAFB',
         'light-white-100': '#F1F4F5',
@@ -28,10 +28,10 @@ const config: Config = {
         menu: '0px 159px 95px rgba(13,12,34,0.01), 0px 71px 71px rgba(13,12,34,0.02), 0px 18px 39px rgba(13,12,34,0.02), 0px 0px 0px rgba(13,12,34,0.02)',
       },
       screens: {
-        'xs': '400px',
+        xs: '400px',
       },
       maxWidth: {
-        '10xl': '1680px'
+        '10xl': '1680px',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

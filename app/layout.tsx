@@ -8,7 +8,8 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Publiq',
-  description: 'Publiq is an e-commerce store for buy tickets to different public concerts, speeches, open mics and other events',
+  description:
+    'Publiq is an e-commerce store for buy tickets to different public concerts, speeches, open mics and other events',
 }
 
 export default function RootLayout({
