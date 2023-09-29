@@ -18,6 +18,8 @@
     }
   },
   "lint-staged": {
+    "app/**/*.{ts,tsx,html,css}": "prettier --write",
+    "components/**/*.{ts,tsx,html,css}": "prettier --write",
     "app/**/*.{ts,tsx}": "eslint",
     "components/**/*.{ts,tsx}": "eslint"
   },
